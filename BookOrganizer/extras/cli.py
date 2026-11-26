@@ -93,7 +93,7 @@ def run_cli(
             display_books(sorted_books, "ALL BOOKS")
 
         elif choice == "2":
-            book_id = input("Book ID (e.g., B006): ").strip()
+            book_id = input("Book ID (example: B006): ").strip()
             title = input("Title: ").strip()
             author = input("Author: ").strip()
             genres_raw = input("Genres: ").strip()
