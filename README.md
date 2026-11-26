@@ -1,4 +1,4 @@
-# Book Organizer CLI
+# Book Organizer
 
 Aplikasi CLI (Command-Line Interface) berbasis Python untuk mengelola koleksi buku pribadi atau perpustakaan kecil dengan dukungan **multi-genre** per buku, pencarian, filtering, pengelompokan, deduplikasi, rekapitulasi statistik, serta pemrosesan file JSON dan CSV.
 
