@@ -96,8 +96,8 @@ def run_cli(
             book_id = input("Book ID (e.g., B006): ").strip()
             title = input("Title: ").strip()
             author = input("Author: ").strip()
-            genres_raw = input("Genres (comma-separated, e.g. Sci-Fi, Adventure): ").strip()
-            year = _prompt_int("Publication Year (e.g., 2024): ")
+            genres_raw = input("Genres: ").strip()
+            year = _prompt_int("Publication Year: ")
             rating = _prompt_float("Rating (0.0 - 5.0): ")
             if year is not None and rating is not None:
                 books, msg = add_book(books, book_id, title, author, genres_raw, year, rating)
@@ -120,7 +120,7 @@ def run_cli(
         elif choice == "5":
             unique_genres = sorted(get_unique_genres(books))
             print("Available genres:", ", ".join(unique_genres) if unique_genres else "None")
-            selected_genres = input("Enter genre(s) to filter (comma-separated): ").strip()
+            selected_genres = input("Enter genre to filter: ").strip()
             filtered = filter_by_genre(books, selected_genres)
             display_books(filtered, f"GENRE(S): {selected_genres}")
             grouped = group_by_genre(books)
@@ -138,7 +138,7 @@ def run_cli(
             print(f"Average rating     : \033[2m{summary['avg_rating']}\033[0m")
             print(f"Highest rating     : \033[2m{summary['highest_rating']}\033[0m")
             print(f"Lowest rating      : \033[2m{summary['lowest_rating']}\033[0m")
-            print(f"Books by genre     : \033[2m{summary['count_by_genre']}\033[0m")
+            print(f"\nBooks by genre     : \033[2m{summary['count_by_genre']}\033[0m")
 
         elif choice == "8":
             filename = input(f"Enter filename inside (default: books_list1.json): ").strip() or "books_data.json"
